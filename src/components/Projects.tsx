@@ -18,6 +18,7 @@ const Projects = () => {
     const previews = [
         'Preview/boulevard.png',
         'Preview/burger.png',
+        'Preview/cinephile.png',
         'Preview/gotrip.png',
         'Preview/grayson.png',
         'Preview/clean.png',
