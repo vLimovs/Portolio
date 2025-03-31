@@ -22,6 +22,7 @@ const Projects = () => {
         'Preview/gotrip.png',
         'Preview/grayson.png',
         'Preview/clean.png',
+        'Preview/market.png',
         'Preview/oku.png',
         'Preview/parallax.png',
         'Preview/portfolio.png',
@@ -37,15 +38,16 @@ const Projects = () => {
     useEffect(() => {
         fetchData()
     }, [])
-    
+
     return (
         <section className="projects">
             <h3>Projects</h3>
             <Swiper
                 modules={[Navigation]}
                 spaceBetween={30}
-                navigation
-                slidesPerView={1}
+                slidesPerView={2}
+                navigation={true}
+                loop={true}
                 className="projects__cards"
             >
                 {data && data.map((item, idx) => (
