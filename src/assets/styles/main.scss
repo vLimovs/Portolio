@@ -33,7 +33,7 @@
 
 :root {
     --primary-color: #fff;
-    --secondary-text: #c5c5c5;
+    --secondary-text: #8c8c8c;
     --blue-gradient: #5badff;
     --secondary-color: #8491a0;
     --card-color: #2a2a2a;
@@ -41,11 +41,14 @@
     --font-family: "Poppins", sans-serif;
     --second-family: "Inter", sans-serif;
     --third-family: "Plus Jakarta Sans", sans-serif;
+    --headerfooter: #17171798;
 }
 
 .dark {
     --primary-color: #161513;
     --background-color: #fff;
+    --card-color: #ffffff6e;
+    --headerfooter: #ffffff82;
 }
 
 body {
@@ -56,7 +59,10 @@ body {
 
 
 .header {
-    background: #222222;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        var(--primary-color) 0px 1px 10px;
+    background: var(--headerfooter);
     position: sticky;
     top: 0;
     z-index: 999;
@@ -75,8 +81,12 @@ body {
         justify-content: space-between;
         align-items: center;
 
+        >img {
+            filter: drop-shadow(0px 0px 3px var(--primary-color));
+        }
+
         >i {
-            color: #FFF;
+            color: var(--primary-color);
             display: none;
             cursor: pointer;
 
@@ -104,10 +114,12 @@ body {
                     display: flex;
                 }
             }
+
             li .last {
-                color: #FFF;
+                color: var(--primary-color);
                 text-shadow: #FFF 0px 0px 10px;
             }
+
             li a {
                 cursor: pointer;
                 font-family: var(--third-family);
@@ -115,13 +127,9 @@ body {
                 font-size: 15px;
                 letter-spacing: 0.02em;
                 text-align: center;
-                color: #ffffffa5;
+                color: var(--primary-color);
                 position: relative;
                 transition: .2s;
-
-                &:hover {
-                    color: #FFF;
-                }
 
                 &::after {
                     content: '';
@@ -129,7 +137,7 @@ body {
                     position: absolute;
                     bottom: -5px;
                     left: 0;
-                    background: #FFF;
+                    background: var(--primary-color);
                     width: 100%;
                     height: 2px;
                     transform: scaleX(0);
@@ -243,6 +251,8 @@ body {
 
             li {
                 background: #161513;
+                box-shadow:
+                    var(--primary-color) 0px 5px 25px;
                 border-radius: 25%;
                 padding: 15px;
 
@@ -277,19 +287,18 @@ body {
         padding: 0 50px;
 
         &-item {
-            border: #222222 3px solid;
+            border: var(--primary-color) 3px solid;
             background: var(--card-color);
-            min-width: 258px;
+            width: 100%;
             max-width: 390px !important;
             border-radius: 18px;
             display: flex;
             flex-direction: column;
-            align-items: start;
             overflow: hidden;
 
             &-img {
                 object-fit: cover;
-                width: 390px;
+                max-width: 100%;
                 height: 235px;
 
                 img {
@@ -318,13 +327,14 @@ body {
                 font-size: 19px;
                 line-height: 105%;
                 text-transform: uppercase;
-                color: #FFF;
+                color: var(--primary-color);
             }
 
             .arrow {
                 position: absolute;
                 right: 19px;
                 bottom: 23px;
+                filter: drop-shadow(0px 0px 5px var(--primary-color));
             }
         }
 
@@ -408,7 +418,18 @@ body {
 }
 
 .footer {
-    background: #191919;
+    background: var(--headerfooter);
+    box-shadow:
+        var(--primary-color) 0px 1px 10px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 630px) {
+            flex-direction: column;
+        }
+    }
 
     &__inner {
         padding: 100px 25px;
@@ -421,7 +442,7 @@ body {
             font-weight: 700;
             font-size: 23px;
             letter-spacing: 0.02em;
-            color: #FFF;
+            color: var(--primary-color);
         }
 
         p {
@@ -430,24 +451,70 @@ body {
             font-size: 14px;
             letter-spacing: 0.02em;
             color: var(--secondary-text);
-            max-width: 900px;
+            max-width: 700px;
         }
 
         a {
             font-family: var(--font-family);
             font-weight: 600;
             font-size: 14px;
+            width: max-content;
             letter-spacing: 0.02em;
-            color: var(--secondary-text);
+            color: #FFF;
             display: flex;
             align-items: center;
             gap: 5px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff8660 0%, #9a33ff 100%);
+            padding: 5px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 350px;
+        width: 100%;
+        font-family: var(--font-family);
+
+        label {
+            color: var(--secondary-text);
         }
 
-        &-links {
-            margin-top: 41px;
-            display: flex;
-            gap: 30px
+        input, textarea{
+            padding: 10px;
+            border: #9a33ff 2px solid;
+            border-radius: 15px;
+            width: 100%;
+            background: transparent;
+            margin-bottom: 10px;
+            font-family: var(--font-family);
+            color: var(--primary-color);
+            &::placeholder {
+                font-family: var(--font-family);
+            }
+            
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 25px;
+            width: 250px;
+            height: 50px;
+            font-size: 18px;
+            width: 50%;
+            color: var(--primary-color);
+            border: #9a33ff 2px solid;
+            background: transparent;
+            transition: .3s;
+            &:hover {
+                background: #9a33ff;
+                color: #FFF;
+            }
         }
     }
 }

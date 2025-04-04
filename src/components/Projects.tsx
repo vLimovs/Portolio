@@ -44,11 +44,22 @@ const Projects = () => {
             <h3>Projects</h3>
             <Swiper
                 modules={[Navigation]}
-                spaceBetween={30}
-                slidesPerView={2}
-                navigation={true}
+                spaceBetween={25}
+                slidesPerView={4}
                 loop={true}
+                navigation={true}
                 className="projects__cards"
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    480: {
+                        slidesPerView: 1,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                    }
+                }}
             >
                 {data && data.map((item, idx) => (
                     <SwiperSlide key={idx} className="projects__cards-item">
