@@ -37,6 +37,7 @@ const ModalGetInTouch: React.FC<Modal> = ({ modal, setModal }) => {
             .then(
                 () => {
                     toastr["success"](" ", "The message has sent successfully !");
+                    setModal(false)
                 },
                 () => {
                     toastr["error"](" ", "Something went wrong :с");
