@@ -54,7 +54,7 @@ const Footer = () => {
                     <label>Your email</label>
                     <input type="email" name="user_email" placeholder="Your email" required />
                     <label>Type a message</label>
-                    <textarea name="message" style={{ resize: 'none' }} placeholder="Text..." required />
+                    <textarea name="message" title="Please don't forgot type your contacts exept email, etc. Telegram" style={{ resize: 'none' }} placeholder="Text..." required />
                     <button type="submit" value="Send">Submit</button>
                 </form>
             </div>

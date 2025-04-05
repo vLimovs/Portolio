@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
-
-const Header = () => {
+interface Modal {
+    modal?: any,
+    setModal: any,
+}
+const Header:React.FC<Modal> = ( {setModal} ) => {
     const [isNav, setIsNav] = useState(false)
     useEffect(() => {
         const body = document.body
@@ -28,7 +31,7 @@ const Header = () => {
                     <li><a href="#">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#footer">Contact</a></li>
+                    <li><a onClick={() => setModal(true)}>Contact</a></li>
                     <li><a className="last" onClick={changeTheme}><i className="fa-solid fa-moon"> </i>Theme</a></li>
                 </ul>
                 <i

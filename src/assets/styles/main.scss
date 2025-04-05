@@ -204,6 +204,7 @@ body {
             margin: 41px 0 88px;
             display: flex;
             gap: 18px;
+            cursor: pointer;
 
             a:nth-of-type(1) {
                 background: var(--primary-color);
@@ -512,31 +513,26 @@ body {
     &__form {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         max-width: 350px;
         width: 100%;
         font-family: var(--font-family);
 
         label {
-            color: var(--secondary-text);
+            color: var(--primary-color);
+            margin-bottom: 5px;
         }
 
         input,
         textarea {
-            padding: 10px;
-            border: #9a33ff 2px solid;
-            border-radius: 15px;
-            width: 100%;
-            background: transparent;
-            margin-bottom: 10px;
-            font-family: var(--font-family);
+
+            margin-bottom: 25px;
+            padding: 10px 20px;
             color: var(--primary-color);
-
-            &::placeholder {
-                font-family: var(--font-family);
-            }
-
+            font-family: var(--font-family);
+            border-radius: 10px;
+            border: var(--primary-color) 2px solid;
+            background: transparent;
         }
 
         textarea {
@@ -545,19 +541,127 @@ body {
 
         button {
             cursor: pointer;
+            padding: 10px;
             border-radius: 25px;
-            width: 250px;
-            height: 50px;
-            font-size: 18px;
-            width: 50%;
+            border: var(--primary-color) 2px double;
             color: var(--primary-color);
-            border: #9a33ff 2px solid;
+            font-size: 19px;
             background: transparent;
+            padding: 20px;
+            width: 100%;
+            margin: auto;
             transition: .3s;
 
             &:hover {
-                background: #9a33ff;
-                color: #FFF;
+                background: var(--primary-color);
+                color: var(--background-color);
+            }
+        }
+    }
+}
+
+.modal {
+    display: grid;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    place-content: center;
+    place-items: center;
+    position: fixed;
+    inset: 0;
+    background: #00000057;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    &__form {
+        transform: translateY(-250%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        font-family: var(--font-family);
+        backdrop-filter: blur(5px);
+        background: var(--headerfooter);
+        padding: 100px;
+        border-radius: 25px;
+
+        &.active {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+
+        transition: .5s;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        font-family: var(--font-family);
+        backdrop-filter: blur(5px);
+        background: var(--headerfooter);
+        padding: 100px;
+        border-radius: 25px;
+
+        i {
+            color: var(--primary-color);
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            cursor: pointer;
+        }
+
+        p {
+            color: var(--secondary-text);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        label {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+
+            margin-bottom: 25px;
+            padding: 10px 20px;
+            color: var(--primary-color);
+            font-family: var(--font-family);
+            border-radius: 10px;
+            border: var(--primary-color) 2px solid;
+            background: transparent;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 25px;
+            border: var(--primary-color) 2px double;
+            color: var(--primary-color);
+            font-size: 19px;
+            background: transparent;
+            padding: 20px;
+            width: 100%;
+            margin: auto;
+            transition: .3s;
+
+            &:hover {
+                background: var(--primary-color);
+                color: var(--background-color);
             }
         }
     }

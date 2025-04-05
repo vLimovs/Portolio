@@ -1,4 +1,8 @@
-const Main = () => {
+interface Modal {
+    modal?: any,
+    setModal: any,
+}
+const Main: React.FC<Modal> = ({setModal}) => {
     return (
         <main className="main container">
             <div className="main__bio">
@@ -6,7 +10,7 @@ const Main = () => {
                 <h1>I do code and make content <span>about it!</span></h1>
                 <p>I can develop a fully functional and responsive website based on your design and requirements. I can also build the site from scratch, ensuring clean and efficient code, smooth performance, and modern UI/UX. Throughout the process, I’ll keep you updated and provide consultations to achieve the best result. 🚀</p>
                 <div className="main__bio-btns">
-                    <a href="#form">Get In Touch</a>
+                    <a onClick={() => setModal(true)}>Get In Touch</a>
                     <a href="https://github.com/vLimovs">GitHub Profile</a>
                 </div>
             </div>
