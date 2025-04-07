@@ -58,7 +58,13 @@ const Projects = () => {
                     },
                     640: {
                         slidesPerView: 2,
-                    }
+                    },
+                    1000: {
+                        slidesPerView: 3,
+                    },
+                    1400: {
+                        slidesPerView: 4,
+                    },
                 }}
             >
                 {data && data.map((item, idx) => (

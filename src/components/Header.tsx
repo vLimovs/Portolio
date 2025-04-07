@@ -3,8 +3,12 @@ interface Modal {
     modal?: any,
     setModal: any,
 }
-const Header:React.FC<Modal> = ( {setModal} ) => {
+const Header: React.FC<Modal> = ({ setModal }) => {
     const [isNav, setIsNav] = useState(false)
+    const CloseNavWhileModalActive = () => {
+        setIsNav(false)
+        setModal(true)
+    }
     useEffect(() => {
         const body = document.body
         if (body) {
@@ -31,7 +35,7 @@ const Header:React.FC<Modal> = ( {setModal} ) => {
                     <li><a href="#">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a onClick={() => setModal(true)}>Contact</a></li>
+                    <li><a onClick={() => CloseNavWhileModalActive()}>Contact</a></li>
                     <li><a className="last" onClick={changeTheme}><i className="fa-solid fa-moon"> </i>Theme</a></li>
                 </ul>
                 <i

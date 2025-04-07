@@ -45,16 +45,16 @@ const ModalGetInTouch: React.FC<Modal> = ({ modal, setModal }) => {
             );
     };
     return (
-        <div className={`modal ${modal && 'active'}`}>
-            <form id="form" ref={form} onSubmit={sendEmail} className={`modal__form ${modal && 'active'}`}>
+        <div className={`modal ${modal ? 'active' : ''}`}>
+            <form id="form" ref={form} onSubmit={sendEmail} className={`modal__form ${modal ? 'active' : ''}`}>
                 <i className="fa-solid fa-x" onClick={() => setModal(false)}></i>
                 <label>Your name</label>
                 <input type="text" name="user_name" placeholder="Your name" required />
                 <label>Your email</label>
                 <input type="email" name="user_email" placeholder="Your email" required />
                 <label>Type a message</label>
-                <textarea name="message" title="Please providee your contacts exept email, etc. Telegram" style={{ resize: 'none' }} placeholder="Text..." required />
-                <p>Please providee your contacts exept email, etc. Telegram</p>
+                <textarea name="message" title="Please provide your contacts exept email, etc. Telegram" style={{ resize: 'none' }} placeholder="Text..." required />
+                <p>Please provide your contacts exept email, etc. Telegram</p>
                 <button type="submit" value="Send">Submit</button>
             </form>
         </div>
