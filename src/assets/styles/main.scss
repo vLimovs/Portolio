@@ -68,9 +68,10 @@ body {
     box-shadow:
         var(--secondary-text) 0px 1px 3px;
     background: var(--headerfooter);
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 999;
+    width: 100%;
     height: 84px;
     transition: .3s;
 
@@ -357,6 +358,7 @@ body {
                 max-width: 100%;
                 height: 235px;
                 overflow: hidden;
+
                 img {
                     object-fit: cover;
                     width: 100%;
@@ -477,6 +479,7 @@ body {
 }
 
 .footer {
+    padding: 50px 30px;
     background: var(--headerfooter);
     box-shadow:
         var(--primary-color) 0px 1px 10px;
@@ -485,6 +488,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 30px;
 
         @media (max-width: 630px) {
             flex-direction: column;
@@ -492,7 +496,6 @@ body {
     }
 
     &__inner {
-        padding: 100px 25px;
         display: grid;
         place-content: center;
         gap: 15px;
@@ -546,7 +549,7 @@ body {
         input,
         textarea {
 
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             padding: 10px 20px;
             color: var(--primary-color);
             font-family: var(--font-family);
@@ -634,8 +637,8 @@ body {
         i {
             color: var(--primary-color);
             position: absolute;
-            top: 25px;
-            right: 25px;
+            top: 70px;
+            right: 70px;
             cursor: pointer;
         }
 

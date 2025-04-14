@@ -51,6 +51,9 @@ const Projects = () => {
                 navigation={true}
                 className="projects__cards"
                 breakpoints={{
+                    1: {
+                        slidesPerView: 1,
+                    },
                     320: {
                         slidesPerView: 1,
                     },
