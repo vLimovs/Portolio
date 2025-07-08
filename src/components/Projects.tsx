@@ -23,6 +23,7 @@ const Projects = () => {
         'Preview/grayson.png',
         'Preview/clean.png',
         'Preview/market.png',
+        'Preview/ndm.png',
         'Preview/oku.png',
         'Preview/order.png',
         'Preview/parallax.png',
